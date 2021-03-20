@@ -1,8 +1,16 @@
-#!/bin/bash -x
+#!/bin/bash
+
+
+declare -A operations
+
 read -p "enter fno:" a
 read -p "enter sno:" b
 read -p "enter tno:" c
-w=$(( a + b * c ))
-x=$(( a * b + c ))
-y=$(( c + a / b ))
-z=$(( a % b + c ))
+
+operations[w]=$(( $a + $b * $c ))
+operations[x]=$(( $a * $b + $c ))
+operations[y]=$(( $c + $a / $b ))
+operations[z]=$(( $a % $b + $c ))
+
+
+echo ${operations[@]}
