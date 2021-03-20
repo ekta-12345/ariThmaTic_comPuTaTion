@@ -14,3 +14,16 @@ operations[z]=$(( $a % $b + $c ))
 
 
 echo ${operations[@]}
+index=0
+
+arr=()
+for i in ${operations[@]}; do
+
+        #assign i value to array[index]
+        arr[$index]=$i
+
+        #increment index
+        index=`expr $index + 1`
+done
+
+echo "Array is :" ${arr[*]}
