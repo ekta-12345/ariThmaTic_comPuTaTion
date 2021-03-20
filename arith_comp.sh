@@ -33,7 +33,7 @@ do
     for((j = 0; j<4-i-1; j++)) 
     do
       
-        if [ ${arr[j]} -lt ${arr[$((j+1))]} ] 
+        if [ ${arr[j]} -gt ${arr[$((j+1))]} ] 
         then
             # swap 
             temp=${arr[j]} 
@@ -42,4 +42,4 @@ do
         fi
     done
 done
-echo "Array sorted in descending order :" ${arr[*]}
+echo "Array sorted in ascending order :" ${arr[*]}
