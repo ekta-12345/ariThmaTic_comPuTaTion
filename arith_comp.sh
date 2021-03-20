@@ -25,5 +25,21 @@ for i in ${operations[@]}; do
         #increment index
         index=`expr $index + 1`
 done
+echo "Array before sorting:" ${arr[*]}
 
-echo "Array is :" ${arr[*]}
+for ((i = 0; i<4; i++)) 
+do
+      
+    for((j = 0; j<4-i-1; j++)) 
+    do
+      
+        if [ ${arr[j]} -lt ${arr[$((j+1))]} ] 
+        then
+            # swap 
+            temp=${arr[j]} 
+            arr[$j]=${arr[$((j+1))]}   
+            arr[$((j+1))]=$temp 
+        fi
+    done
+done
+echo "Array sorted in descending order :" ${arr[*]}
